@@ -18,10 +18,11 @@ public class JpaMain {
         try {
 
             //영속 상태 시작
-            Member member = new Member(200L, "member200");
-            em.persist(member);
+            Member member = em.find(Member.class, 150L);
 
-            em.flush();
+            member.setName("AAAAA");
+
+            em.clear();
 
             System.out.println("==================");
 
