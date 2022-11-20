@@ -30,7 +30,6 @@ public class JpaMain {
             em.persist(member2);
             em.persist(member3);
 
-
             System.out.println("member1 = " + member1.getId());
             System.out.println("member2 = " + member2.getId());
             System.out.println("member3 = " + member3.getId());
