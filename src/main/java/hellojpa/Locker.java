@@ -6,11 +6,12 @@ import javax.persistence.*;
 public class Locker {
 
     @Id @GeneratedValue
-    @Column(name = "TEAM_ID")
+    @Column(name = "LOCKER_ID")
     private Long id;
 
     private String name;
 
+    @OneToOne(mappedBy = "locker")
     private Member member;
 
     public Long getId() {
