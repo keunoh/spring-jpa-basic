@@ -1,19 +1,17 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.lang.reflect.Member;
 
 @Entity
-public class Locker {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn
+public class Item {
 
     @Id @GeneratedValue
-    @Column(name = "LOCKER_ID")
     private Long id;
 
     private String name;
-
-//    @OneToOne(mappedBy = "locker")
-//    private Member member;
+    private int price;
 
     public Long getId() {
         return id;
@@ -30,6 +28,12 @@ public class Locker {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getPrice() {
+        return price;
     }
 
-
+    public void setPrice(int price) {
+        this.price = price;
+    }
+}
